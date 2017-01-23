@@ -56,5 +56,15 @@ corrected for OverScan and Trimming.
 - Shows cloud grey attenuation
 - Shows H2O variation
 
+
+## Step 11:
+- AnaEqWdtDataSim_Spectrum_HD14943.ipynb:
+calculate  the Equivalent Widths
+
+
+-----
+
+
+
 To run python choose anaconda astropyphys
 	
