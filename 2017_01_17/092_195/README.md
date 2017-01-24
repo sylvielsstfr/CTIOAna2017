@@ -83,19 +83,39 @@ One must decide if one want one average angle for all images or one rotation ang
 
 ## Step 10: Extract the 1-D spectrum
 
-- **Extract_Spectrum_HD14943.ipynb** : Really extract the spectrum per unit of exposure time
-(per second). 
-	- In fact extract the two +1/-1 orders are used to find the origin of wavelength.
+- **Extract_Spectrum_HD14943.ipynb** : Really extract the spectrum per unit of exposure time (per second). 
+- ADU vs x-pixel
+
+	- In fact separate the two +1/-1 orders are used to find the origin of wavelength.
 	- Probably some additionnal work is necessary to do more local background subtraction.
+	- There is a left spectrum (order -1) and a right spectrum (order +1)
+	- The gain between the two order may be different. This has not been implemented.
+
+-input directory : rotated_fitsimages/
+-output directory : spectrum_fitsspec/
 
 ## Step 11: Control of the Simulated spectra
-- **View_SimSpectrum_HD14943.ipynb** : To view simulated spectra and use a single file to save simulated spectra
+- **View_SimSpectrum_HD14943.ipynb** : To view simulated spectra and use a single file to save simulated spectra.
+This is mandatory because it builds a single fits file with all spectra.
+
+outputfitsfile='AllSimSpectra_'+object_name+'.fits'
+The atmosphere had been simulated from the LogBook here
+- CTIOAna2017/atmosphere/simulate_transparency_CTIO_ScattAbs_HD14943_2017_01_17_092_195.py
+The simulated spectra has been simulated from here:
+-CTIOAna2017/simu_spectra/libCTIOSimuObsSpectra.py
+
+ The next step will open this file
+- At this stage, next step will need the simulated spectra.
+- So the goal here is also to check how looks the simulated spectra.
 
 
 ## Step 12: Calibration in wavelength
 
 - **Fit_Spectrum_HD14943.ipynb** : Does the fit to get the calibration curve.
    It saves the result of the fit inside a fits file.
+   Notice the simulated spectra are read.
+ - input directory: spectrum_fitspec/
+ - output directory: spectrum_calibspec/ 
    
 ## Step 13 : Don't remember but necessary
 - **Calibrate_Spectrum_HD14943.ipynb** : Does the calibration of the dispersive axis on the data and save calibrated data in fits file.
