@@ -64,7 +64,9 @@ calculate  the Equivalent Widths
 
 -----
 
+- Magic command with ds9:
 
+ds9 -tile -cmap rainbow -zscale  -zoom 0.075  *.fits
 
 To run python choose anaconda astropyphys
 	
