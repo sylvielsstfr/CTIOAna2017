@@ -111,32 +111,44 @@ The simulated spectra has been simulated from here:
 
 ## Step 12: Calibration in wavelength
 
-- **Fit_Spectrum_HD14943.ipynb** : Does the fit to get the calibration curve.
-   It saves the result of the fit inside a fits file.
+- **Fit_Spectrum_HD14943.ipynb** : Does the fit to get the calibration curve pixel <-> wl
+- - A second order fit is performed by now
+   It saves the result of the fit inside a single fits file.
    Notice the simulated spectra are read.
  - input directory: spectrum_fitspec/
- - output directory: spectrum_calibspec/ 
+ - output directory: spectrum_calibspec/
+ - input simulation :  all fits files for simulated spectrum (may be too large)
+ - produce a single file with all fits output.
+
+ Due to the fact too many fits file had been open, the next step has been written
+ to open all simlated files at the same time (file produced by  **View_SimSpectrum_HD14943.ipynb**.
    
-## Step 13 : Don't remember but necessary
-- **Calibrate_Spectrum_HD14943.ipynb** : Does the calibration of the dispersive axis on the data and save calibrated data in fits file.
+## Step 13 : Calibration in wavelength 
+- **Calibrate_Spectrum_HD14943.ipynb** :  Apply the wavelength calibration calculated by  **Fit_Spectrum_HD14943.ipynb**.
+- The calibration of the dispersive axis on the data and save calibrated data in fits file.
+- Save Left and Right spectra with wavelength
+- input directory: /spectrum_fitsspec
+- output directory: /spectrum_calibspec/ 
 
 ## Step 14: Compare data/simulation spectra
 - **CompareCalibSim_Spectrum_HD14943_ipynb** : Compare reconstructed spectrum with simulation. Note the simulation must be smoothed compared to data spectrum.
-
+Save Left and Right spectra with Sim spectra.
+- intput directory: /spectrum_calibspec/ 
+- outputdir : spectrum_calibcompsimrealspec/
 
 ## Step 15: Does some atmospheric studies over time
 - **AnaCalibDataSim_Spectrum_HD14943.ipynb** :
 - Work on spectra to derive atmospheric studies
 - Shows cloud grey attenuation
 - Shows H2O variation
-
+- input dir : spectrum_calibcompsimrealspec/
 
 ## Step 16: Equivalent Width
 - **AnaEqWdtDataSim_Spectrum_HD14943.ipynb**:
 calculate  the Equivalent Widths
+input dir : spectrum_calibcompsimrealspec/
 
-
------
+-----------------------
 
 - Magic command with ds9:
 
