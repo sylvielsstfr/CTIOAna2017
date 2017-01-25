@@ -2,6 +2,10 @@ README FILE
 ===========
 Users/dagoret-campagnesylvie/MacOsX/LSST/MyWork/GitHub/CTIOAna2017/092_195/README.md
 
+
+author : Sylvie Dagoret-Campagne
+affiliation : LAL/IN2P3/CNRS, France
+
 Last update 2017 January 24th
 
 
@@ -24,9 +28,9 @@ No filter
 
 - **MakeLogBook.ipynb** :  Jupyther notebook making the logbook of the images by reading the fits header of the images.
   - make the list of images making the logbook from the information in the header such as dates, airmasses,....
-  - the input path is the trim_images/ directory 
+  - the input path is  trim_images/ directory 
   - the oputput files are csv and fits are important to generate a series of simulated atmosphere
-  - - specify the proper object name and infos inside the notebook.
+  - pecify the proper object name and infos inside the notebook.
 
   
 ##  Step 3: Make Master Bias
@@ -47,7 +51,9 @@ produces  MasterFlat_CTIO_20170118.fits, using  MasterBias_CTIO_20170118.fits
 
 Reduces s series of images using previously done
 - MasterFlat_CTIO_20170118.fits
-- MasterBias_CTIO_20170118.fits		
+- MasterBias_CTIO_20170118.fits	
+- input directory : trim_images/
+- output directory : reduced_fitsimages/	
 
 ## Step 7 : Sky Background subtraction
 - **SkyBGSubt_HD14943.ipynb** Subtract the sky background (star and moon light)
@@ -55,7 +61,7 @@ Reduces s series of images using previously done
 - the goal of this is to remove more background.
 - Probably this way, based on photutis of removing background is not good.
 - it is open to any improvment (better than nothing).
-- input path trim_images/
+- input path reduced_fitsimages/
 - output path processed_fitsimages/
 - Don't forget to rename the file according the object name as well inse the object name inside the notebook
 
